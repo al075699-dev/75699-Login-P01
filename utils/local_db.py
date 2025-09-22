@@ -1,7 +1,7 @@
 import json
 import os
 
-def guardar_diccionario(datos, nombre_archivo):
+def save(datos, nombre_archivo):
     try:
         with open(nombre_archivo, 'w', encoding='utf-8') as archivo:
             json.dump(datos, archivo, ensure_ascii=False, indent=4)
@@ -11,7 +11,7 @@ def guardar_diccionario(datos, nombre_archivo):
         print(f"Error al guardar: {e}")
         return False
 
-def cargar_diccionario(nombre_archivo):
+def load(nombre_archivo):
     try:
         if not os.path.exists(nombre_archivo):
             print("El archivo no existe")
